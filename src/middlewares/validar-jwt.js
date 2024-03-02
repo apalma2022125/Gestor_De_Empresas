@@ -1,40 +1,38 @@
 import jwt from 'jsonwebtoken'
-import Usuario from '../users/user.model.js'
+import Admin from '../users/user.model.js'
 
 export const validarJWT = async (req, res, next) => {
     const token = req.header("x-token");
 
   if (!token) {
     return res.status(401).json({
-      msg: "No hay token en la petición",
+      msg: "No token in the request",
     });
   }
 
   try {
-    //verificación de token
     const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-    //leer el usuario que corresponde al uid
-    const usuario = await Usuario.findById(uid);
-    //verificar que el usuario exista.
-    if(!usuario){
+    const admin = await Admin.findById(uid);
+
+    if(!admin){
       return res.status(401).json({
-        msg: 'Usuario no existe en la base de datos'
-      })
-    }
-    //verificar si el uid está habilidato.
-    if(!usuario.estado){
-      return res.status(401).json({
-        msg: 'Token no válido - usuario con estado:false'
+        msg: 'Admin does not exist in the database'
       })
     }
 
-    req.usuario = usuario;
+    if(!admin.estado){
+      return res.status(401).json({
+        msg: 'Invalid token - admin with status:false'
+      })
+    }
+
+    req.admin = admin;
 
     next();
   } catch (e) {
     console.log(e),
       res.status(401).json({
-        msg: "Token no válido",
+        msg: "Invalid Token",
       });
   }
 }

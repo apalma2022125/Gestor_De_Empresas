@@ -1,22 +1,22 @@
 import mongoose from 'mongoose';
 
 const AdminSchema = mongoose.Schema({
-  nombre: {
+  name: {
     type: String,
-    required: [true, "El nombre es obligatorio"],
+    required: [true, "The name is required"],
   },
-  correo: {
+  email: {
     type: String,
-    required: [true, "El correo es obligarorio"],
+    required: [true, "The email is required"],
     unique: true,
   },
   password: {
     type: String,
-    required: [true, "La contraseña es obligaroria"],
+    required: [true, "The password is required"],
   },
   role:{
     type :String,
-    default:"ADMIN"
+    default:"ADMIN_ROLE"
   },
   estado: {
     type: Boolean,
