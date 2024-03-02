@@ -5,7 +5,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import { dbConnection } from './mongo.js';
-import userRoutes from '../src/users/user.routes.js';
+import adminRoutes from '../src/admin/admin.router.js';
 import authRoutes from '../src/auth/auth.routes.js'
 
 class Server{
@@ -33,7 +33,7 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.usuarioPath, userRoutes);
+        this.app.use(this.adminsPath, adminRoutes);
         this.app.use(this.authPath, authRoutes)
     }
 
