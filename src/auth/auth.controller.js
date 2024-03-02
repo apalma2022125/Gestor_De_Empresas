@@ -1,45 +1,41 @@
 import bcryptjs from 'bcryptjs';
-import Usuario from '../users/user.model.js'
+import User from '../users/user.model.js'
 import { generarJWT } from '../helpers/generate-jwt.js'; 
 
 export const login = async (req, res) => {
     const { correo, password } = req.body;
 
   try {
-    //verificar si el email existe:
-    const usuario = await Usuario.findOne({ correo });
+    const user = await User.findOne({ correo });
 
-    if (!usuario) {
+    if (!user) {
       return res.status(400).json({
-        msg: "Credenciales incorrectas, Correo no existe en la base de datos",
+        msg: "Incorrect credentials, does not exist in database",
       });
     }
-    //verificar si el ususario está activo
-    if (!usuario.estado) {
+    if (!user.estado) {
       return res.status(400).json({
-        msg: "El usuario no existe en la base de datos",
+        msg: "The user does not exist in the database",
       });
     }
-    // verificar la contraseña
-    const validPassword = bcryptjs.compareSync(password, usuario.password);
+    const validPassword = bcryptjs.compareSync(password, user.password);
     if (!validPassword) {
       return res.status(400).json({
-        msg: "La contraseña es incorrecta",
+        msg: "The password is incorrect        ",
       });
     }
-    //generar el JWT
-    const token = await generarJWT( usuario.id);
+    const token = await generarJWT( user.id);
 
     res.status(200).json({
       msg: 'Login Ok!!!',
-      usuario,
+      user,
       token
     });
 
   } catch (e) {
     console.log(e);
     res.status(500).json({
-      msg: "Comuniquese con el administrador",
+      msg: "Contact the administrator      ",
     });
   }
 }
