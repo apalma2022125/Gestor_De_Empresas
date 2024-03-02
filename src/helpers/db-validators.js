@@ -2,7 +2,7 @@ import Admin from '../users/user.model.js'
 
 
 
-export const existenteEmail = async (email = '') => {
+export const existingEmail = async (email = '') => {
     const existeEmail = await Admin.findOne({email});
     if (existeEmail){
         throw new Error(`This email ${email} is already registered`);
