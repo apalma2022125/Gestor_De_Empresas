@@ -51,7 +51,7 @@ export const coperexPost = async (req, res) => {
     const {name, levelOfImpact, yearsOfExperience, category } = req.body;
     const coperex = new Coperex ({name , levelOfImpact, yearsOfExperience: parseInt(yearsOfExperience), category});
 
-    await empresa.save();
+    await coperex.save();
 
     res.status(200).json({
         coperex
