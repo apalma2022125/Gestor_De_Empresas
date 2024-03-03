@@ -1,11 +1,11 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
 
-import {existingEmail,existsAdminById} from "../helpers/db-validators";
-import {adminsGet, getAdminById, adminPut, adminDelete, adminsPost} from "./admin.controller";
+import {existingEmail,existsAdminById} from "../helpers/db-validators.js";
+import {adminsGet, getAdminById, adminPut, adminDelete, adminsPost} from "./admin.controller.js";
 
-import { validarCampos } from '../middlewares/validar-campos';
-import {} from '../middlewares/validar-jwt';
+import { validarCampos } from '../middlewares/validar-campos.js';
+import {validarJWT} from '../middlewares/validar-jwt.js';
 
 
 const router = Router();
@@ -17,7 +17,6 @@ router.get("/", adminsGet);
         [
             check("id","This id is not valid").isMongoId(),
             check("id").custom(existsAdminById),
-
             validarCampos,            
         ],getAdminById);
 
@@ -28,7 +27,6 @@ router.put(
     [
         check("id", "This id is not valid").isMongoId(),
         check("id").custom(existsAdminById),
-
         validarCampos,
     ],adminPut);
 
@@ -37,11 +35,11 @@ router.post(
      "/",
      [
          check("name", "The name cannot be empty").not().isEmpty(),
-         check("email", "The email cannot be empty").not().isEmpty(),            check("email", "Enter a valid email address").isEmail(),
-         check("email").custom(existingEmail),
          check("password", "The password cannot be empty").not().isEmpty(),
          check("password", "The password must have minimmum 6 characters").isLength({min:6}),
-    
+         check("email", "The email cannot be empty").not().isEmpty(),           
+         check("email", "Enter a valid email address").isEmail(),
+         check("email").custom(existingEmail),
           validarCampos,
     ],adminsPost);
 

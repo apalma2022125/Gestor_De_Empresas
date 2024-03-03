@@ -1,4 +1,5 @@
-import Admin from '../users/user.model.js'
+import Admin from '../admin/admin.model.js'
+import Coperex from '../coperex/coperex.model.js'
 
 
 
@@ -13,5 +14,12 @@ export const existsAdminById = async (id = '') => {
     const existsAdmin = await Admin.findById(id);
     if (!existsAdmin){
         throw new Error(`The id ${id} not exist`);
+    }
+}
+
+export const existingCoperexById = async (id = '') => {
+    const existCoperex = await Coperex.findById(id);
+    if (!existCoperex){
+        throw new Error(`This ${id} don't exists in database`);
     }
 }

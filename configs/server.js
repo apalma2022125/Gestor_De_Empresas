@@ -12,7 +12,7 @@ class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.usuarioPath = '/coffeApi/v1/users'
+        this.adminsPath = '/coffeApi/v1/admins'
         this.authPath = '/coffeApi/v1/auth'
 
         this.middlewares();

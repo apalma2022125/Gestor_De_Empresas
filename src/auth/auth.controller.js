@@ -1,12 +1,12 @@
 import bcryptjs from 'bcryptjs';
-import Admin from '../users/user.model.js'
+import Admin from '../admin/admin.model.js'
 import { generarJWT } from '../helpers/generate-jwt.js'; 
 
 export const login = async (req, res) => {
-    const { correo, password } = req.body;
+    const { email, password } = req.body;
 
   try {
-    const admin = await Admin.findOne({ correo });
+    const admin = await Admin.findOne({ email });
 
     if (!admin) {
       return res.status(400).json({
