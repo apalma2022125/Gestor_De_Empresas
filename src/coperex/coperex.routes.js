@@ -3,20 +3,21 @@ import { check } from 'express-validator';
 
 import {existingCoperexById} from "../helpers/db-validators.js";
 
-import{coperexGet, coperexPut, coperexPost, getCoperexById} from "./coperex.controller.js"  
+import{coperexGet, coperexPut, coperexPost, getCoperexById, coperexGetBYYear} from "./coperex.controller.js"  
 import{ validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
 const router = Router();
 
 
-router.get("/",
+router.get(
+    "/",
 validarJWT,
 coperexGet);
 
 
 router.get(
-    "/",
+    "/:id",
     [
         validarJWT,
     check("id", "This id is not valid").isMongoId(),
@@ -26,7 +27,7 @@ router.get(
 
 
 router.put(
-    "/",
+    "/:id",
     [
         validarJWT,
         check("id", "This id is invalid").isMongoId(),
@@ -46,5 +47,10 @@ router.post(
     ], coperexPost);
 
 
+    router.get("/byYears/:years",
+    validarJWT,
+    coperexGetBYYear
+  );
 
-export default router;
+
+  export default router;

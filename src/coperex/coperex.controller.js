@@ -1,7 +1,8 @@
+import { request, response } from 'express';
 import Coperex from './coperex.model.js';
 
 
-export const coperexGet = async (req, res) =>{
+export const coperexGet = async (req = request, res = response) =>{
     const {limite, desde } = req.query;
     const query = {estado: true};
 
@@ -57,4 +58,23 @@ export const coperexPost = async (req, res) => {
         coperex
     });
 
+}
+
+
+export const coperexGetBYYear = async (req, res) => {
+    const { years } = req.params; 
+    const {limite, desde } = req.query;
+    const query = { estado: true, tr: years }; 
+
+    const [total, coperexs] = await Promise.all([
+        Coperex.countDocuments(query),
+        Coperex.find(query)
+            .skip(Number(desde))
+            .limit(Number(limite))
+    ]);
+
+    res.status(200).json({
+        total,
+        coperexs
+    });
 }
