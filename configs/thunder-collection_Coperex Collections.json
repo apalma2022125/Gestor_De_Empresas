@@ -1,0 +1,194 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Coperex Collections",
+    "dateExported": "2024-03-05T20:16:41.200Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "86209701-0e5a-4877-b1fa-aaaf1b33a577",
+            "colId": "8d4a4155-bc3d-480d-a104-de180630d76a",
+            "containerId": "",
+            "name": "Conpanies Post",
+            "url": "http://localhost:3000/GestorApi/v1/coperex",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-05T19:04:13.139Z",
+            "modified": "2024-03-05T19:56:16.047Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NmM4MjY4MzRjODg2ZDg4NjAyYWMiLCJpYXQiOjE3MDk2NjU0MzAsImV4cCI6MTcwOTY3MjYzMH0._Z5gb9BTo75ht9Pndf1gvfWMIjV-rSo5c8yWohzcmG0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"b\",\n  \"levelOfImpact\": \"A\",\n  \"yearsOfExperience\": 5,\n  \"category\": \"IT Company\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "1988b5de-a3c6-40ac-a21e-896d2d54bbae",
+            "colId": "8d4a4155-bc3d-480d-a104-de180630d76a",
+            "containerId": "",
+            "name": "Conpanies Get",
+            "url": "http://localhost:3000/GestorApi/v1/coperex",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-05T19:05:15.240Z",
+            "modified": "2024-03-05T19:10:43.956Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NmM4MjY4MzRjODg2ZDg4NjAyYWMiLCJpYXQiOjE3MDk2NjU0MzAsImV4cCI6MTcwOTY3MjYzMH0._Z5gb9BTo75ht9Pndf1gvfWMIjV-rSo5c8yWohzcmG0"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "424dc0b3-30f3-4405-adf8-5e93ec509e07",
+            "colId": "8d4a4155-bc3d-480d-a104-de180630d76a",
+            "containerId": "",
+            "name": "Get Companies By Id",
+            "url": "http://localhost:3000/GestorApi/v1/coperex/65e76e936834c886d88602b6",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-05T19:05:33.912Z",
+            "modified": "2024-03-05T19:14:14.331Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NmM4MjY4MzRjODg2ZDg4NjAyYWMiLCJpYXQiOjE3MDk2NjU0MzAsImV4cCI6MTcwOTY3MjYzMH0._Z5gb9BTo75ht9Pndf1gvfWMIjV-rSo5c8yWohzcmG0"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "14f1ddcc-9f1a-4455-b4c6-b633be3d6675",
+            "colId": "8d4a4155-bc3d-480d-a104-de180630d76a",
+            "containerId": "",
+            "name": "Conpany  Put",
+            "url": "http://localhost:3000/GestorApi/v1/coperex/65e76e936834c886d88602b6",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-03-05T19:06:53.004Z",
+            "modified": "2024-03-05T19:14:41.420Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NmM4MjY4MzRjODg2ZDg4NjAyYWMiLCJpYXQiOjE3MDk2NjU0MzAsImV4cCI6MTcwOTY3MjYzMH0._Z5gb9BTo75ht9Pndf1gvfWMIjV-rSo5c8yWohzcmG0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Tec2\"\n}",
+                "form": []
+            },
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "b4205804-1659-407d-818b-eb87608ca1c1",
+            "colId": "8d4a4155-bc3d-480d-a104-de180630d76a",
+            "containerId": "",
+            "name": "Get Company By Year",
+            "url": "http://localhost:3000/GestorApi/v1/coperex/byYears/4",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-03-05T19:17:12.664Z",
+            "modified": "2024-03-05T19:18:36.906Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NmM4MjY4MzRjODg2ZDg4NjAyYWMiLCJpYXQiOjE3MDk2NjU0MzAsImV4cCI6MTcwOTY3MjYzMH0._Z5gb9BTo75ht9Pndf1gvfWMIjV-rSo5c8yWohzcmG0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fbb04b64-fc40-483b-9968-e880fe87017e",
+            "colId": "8d4a4155-bc3d-480d-a104-de180630d76a",
+            "containerId": "",
+            "name": "Get Company By Category",
+            "url": "http://localhost:3000/GestorApi/v1/coperex/byCategory/IT Company",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-03-05T19:23:01.344Z",
+            "modified": "2024-03-05T19:45:51.845Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NmM4MjY4MzRjODg2ZDg4NjAyYWMiLCJpYXQiOjE3MDk2NjU0MzAsImV4cCI6MTcwOTY3MjYzMH0._Z5gb9BTo75ht9Pndf1gvfWMIjV-rSo5c8yWohzcmG0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4c8173f4-951f-45c6-8bfd-17aa6ea42392",
+            "colId": "8d4a4155-bc3d-480d-a104-de180630d76a",
+            "containerId": "",
+            "name": "Conpanies Az",
+            "url": "http://localhost:3000/GestorApi/v1/coperex/byAZ/az",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-03-05T19:52:21.330Z",
+            "modified": "2024-03-05T19:53:05.510Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NmM4MjY4MzRjODg2ZDg4NjAyYWMiLCJpYXQiOjE3MDk2NjU0MzAsImV4cCI6MTcwOTY3MjYzMH0._Z5gb9BTo75ht9Pndf1gvfWMIjV-rSo5c8yWohzcmG0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8a00eb48-6f7e-4dd6-8f5e-e1bf393054e0",
+            "colId": "8d4a4155-bc3d-480d-a104-de180630d76a",
+            "containerId": "",
+            "name": "Copanies Za",
+            "url": "http://localhost:3000/GestorApi/v1/coperex/byZA/za",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-03-05T20:00:16.318Z",
+            "modified": "2024-03-05T20:00:40.721Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NmM4MjY4MzRjODg2ZDg4NjAyYWMiLCJpYXQiOjE3MDk2NjU0MzAsImV4cCI6MTcwOTY3MjYzMH0._Z5gb9BTo75ht9Pndf1gvfWMIjV-rSo5c8yWohzcmG0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "817f995c-531d-41d5-8084-54369b7f69c6",
+            "colId": "8d4a4155-bc3d-480d-a104-de180630d76a",
+            "containerId": "",
+            "name": "Get Excel By Companies",
+            "url": "http://localhost:3000/GestorApi/v1/coperex/byExcel/ex",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-03-05T20:07:40.772Z",
+            "modified": "2024-03-05T20:08:14.123Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NmM4MjY4MzRjODg2ZDg4NjAyYWMiLCJpYXQiOjE3MDk2NjU0MzAsImV4cCI6MTcwOTY3MjYzMH0._Z5gb9BTo75ht9Pndf1gvfWMIjV-rSo5c8yWohzcmG0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

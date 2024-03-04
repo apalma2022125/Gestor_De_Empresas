@@ -3,7 +3,7 @@ import { check } from 'express-validator';
 
 import {existingCoperexById} from "../helpers/db-validators.js";
 
-import{coperexGet, coperexPut, coperexPost, getCoperexById, coperexGetBYYear} from "./coperex.controller.js"  
+import{coperexGet, coperexPut, coperexPost, getCoperexById, coperexGetBYYear, coperexGetBYCategory, coperexGetByAz, coperexGetByZa, coperexGenerateExcel} from "./coperex.controller.js"  
 import{ validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
@@ -51,6 +51,30 @@ router.post(
     validarJWT,
     coperexGetBYYear
   );
+
+  
+  router.get("/byCategory/:cat",
+  validarJWT,
+  coperexGetBYCategory
+);
+
+
+router.get("/byAZ/az",
+validarJWT,
+coperexGetByAz
+);
+
+
+router.get("/byZA/za",
+validarJWT,
+coperexGetByZa
+);
+
+
+router.get("/byExcel/ex",
+validarJWT,
+coperexGenerateExcel
+);
 
 
   export default router;
