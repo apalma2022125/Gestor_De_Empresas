@@ -1,0 +1,94 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Admins Collections",
+    "dateExported": "2024-03-05T20:16:45.264Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ed771c31-de10-4ffe-975c-891389c6dadc",
+            "colId": "b050a38b-0a3a-4fe6-a122-13a381e0613f",
+            "containerId": "",
+            "name": "Admins Post",
+            "url": "http://localhost:3000/GestorApi/v1/admins",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-05T18:56:07.161Z",
+            "modified": "2024-03-05T19:03:30.863Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Admin3\",\n  \"email\": \"Admin3@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "910517e5-586c-4ab8-a14c-a8b65efa1494",
+            "colId": "b050a38b-0a3a-4fe6-a122-13a381e0613f",
+            "containerId": "",
+            "name": "Admins Get",
+            "url": "http://localhost:3000/GestorApi/v1/admins",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-05T18:56:16.521Z",
+            "modified": "2024-03-05T18:59:38.072Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "ef8b3cbf-1b1e-436e-a0aa-4795f0ac9452",
+            "colId": "b050a38b-0a3a-4fe6-a122-13a381e0613f",
+            "containerId": "",
+            "name": "Get Admin By Id",
+            "url": "http://localhost:3000/GestorApi/v1/admins/65e76b926834c886d8860294",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-05T18:56:32.265Z",
+            "modified": "2024-03-05T18:59:49.832Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "d21f91c4-7284-4474-9dab-aa419b0c0f68",
+            "colId": "b050a38b-0a3a-4fe6-a122-13a381e0613f",
+            "containerId": "",
+            "name": "Admin Put",
+            "url": "http://localhost:3000/GestorApi/v1/admins/65e76b926834c886d8860294",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-05T18:57:04.881Z",
+            "modified": "2024-03-05T19:00:22.355Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"pablo\"\n}",
+                "form": []
+            },
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "e68a8828-294f-40e5-8aa6-30c0b72fc166",
+            "colId": "b050a38b-0a3a-4fe6-a122-13a381e0613f",
+            "containerId": "",
+            "name": "Admin Delete",
+            "url": "http://localhost:3000/GestorApi/v1/admins/65e76b926834c886d8860294",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-03-05T18:57:16.489Z",
+            "modified": "2024-03-05T19:00:36.631Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        }
+    ]
+}
