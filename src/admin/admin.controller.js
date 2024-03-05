@@ -1,6 +1,6 @@
 import {response, request } from"express";
 import bcryptjs from 'bcryptjs';
-import Admin from './admin.model';
+import Admin from './admin.model.js';
 
 
 export const adminsGet = async (req = request, res = response)=>{
@@ -51,10 +51,10 @@ export const adminPut = async (req = request, res = response) => {
  }
 
 
-export const adminsPost = async (req, res)=>{
+export const adminsPost = async (req, res) =>{
 
-    const {nombre, correo,password}= req.body;
-    const admin = new Admin({nombre,correo,password});
+    const {name, email, password} = req.body;
+    const admin = new Admin({name,email,password});
 
     const salt = bcryptjs.genSaltSync(); 
     admin.password = bcryptjs.hashSync(password, salt);    
@@ -69,7 +69,7 @@ export const adminsPost = async (req, res)=>{
 
 export const adminDelete = async (req = request, res = response) =>{
 
-    const {id} = re.params;
+    const {id} = req.params;
 
     const admin = await Admin.findByIdAndUpdate(id, {estado: false});
     const adminAuthenticated = req.admin;
